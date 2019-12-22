@@ -8,9 +8,9 @@ import axios from 'axios' // 引入初始化样式
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 
-axios.defaults.baseURL = 'http://ttapi.research.itcast.cn/mp/v1_0/captchas/:mobile'// 复制黑马头条的默认地址
+axios.defaults.baseURL = 'http://ttapi.research.itcast.cn/mp/v1_0'// 复制黑马头条的默认地址
 Vue.prototype.$axios = axios // 赋值给全局对象
-Vue.config.productionTip = false
+
 Vue.use(ElementUI) // 全局注册
 new Vue({
   router,

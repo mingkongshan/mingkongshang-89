@@ -36,6 +36,7 @@
   </div>
 </template>
 <script>
+
 export default {
   data () {
     let validator = function (rule, value, callBack) {
@@ -75,9 +76,25 @@ export default {
     login () {
       // 校验整个表单的规则
       // validate 是一个方法 => 方法中传入的一个函数 两个校验参数  是否校验成功/未校验成功的字段
-      this.$refs.myForm.validate(function (isOK) {
+      this.$refs.myForm.validate((isOK) => {
         if (isOK) {
-          console.log('校验成功')
+          // 认为前端校检登录表单成功
+          // 地质参数 查询参数 params 对象
+          // body参数 data对象
+          this.$axios({
+            url: '/authorizations', // 请求地址
+            method: 'post',
+            data: this.loginForm
+          }).then(result => {
+            window.localStorage.setItem('user-token', result.data.data.token) // 前端缓存令牌
+            // 成功以后才进入到then
+            this.$router.push('/home') // 跳转到主页
+          }).catch(() => {
+            this.$message({
+              message: '您的手机号或者验证码不正确',
+              type: 'warning'
+            })
+          })
         }
       })
     }
