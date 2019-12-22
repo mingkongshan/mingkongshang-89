@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang = 'less' scoped>
-.layout-aside {
+    .layout-aside {
     width: 230px;
     .title {
         text-align: center;
@@ -49,7 +49,7 @@ export default {
         img {
             height: 35px;
         }
+
     }
 }
-
 </style>
