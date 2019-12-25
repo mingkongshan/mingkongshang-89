@@ -56,7 +56,7 @@ export default {
         window.localStorage.removeItem('user-token') // 删除用户的令牌
         this.$router.push('/login')
       } else if (commad === 'git') {
-        window.locatiohtn.href = 'https://github.com/mingkongshan/mingkongshang-89'
+        window.location.href = 'https://github.com/mingkongshan/mingkongshang-89'
       }
     }
   }
