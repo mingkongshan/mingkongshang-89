@@ -27,7 +27,7 @@ axios.interceptors.response.use(function (response) {
   let message = '' // 提示信息
   switch (status) {
     case 400:
-      message = '您的站好密码或者验证码错误'
+      message = '您的账号密码或者验证码错误'
       break
     case 403:
       // resfehtoken 过期 强制跳转到登录页 resfentoken => 是用米换取token的
